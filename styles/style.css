@@ -1,3 +1,4 @@
+/* Corrección: Se cambió '-' por '*' */
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +29,6 @@ body {
     letter-spacing: -10px;
 }
 
-/* 2. Capa central diagonal (Fondo oscuro) */
 .bg-city {
     position: absolute;
     top: 0;
@@ -105,10 +105,14 @@ body {
     font-weight: bold;
     font-size: 16px;
     color: #000;
+    align-items: center;
 }
 
-.socials span {
+.socials img, .socials span {
     cursor: pointer;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 
 .hero-image {
@@ -139,4 +143,69 @@ body {
 
 .line.active {
     background-color: #ffffff;
+}
+
+/* Adaptación a dispositivos móviles */
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .container {
+        height: 100vh;
+    }
+
+    .bg-watermark {
+        font-size: 40vw;
+        top: 5%;
+        left: 0;
+    }
+
+    .bg-city {
+        width: 100%;
+        height: 55%;
+        top: auto;
+        bottom: 0;
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .bg-red {
+        width: 100%;
+        height: 25%;
+        top: auto;
+        bottom: 0;
+        clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .content {
+        width: 90%;
+        left: 5%;
+        top: 5%;
+        height: auto;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .title {
+        font-size: 38px;
+    }
+
+    .desc {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .hero-image {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 2%;
+        height: 55%;
+    }
+
+    .indicators {
+        display: none;
+    }
 }
