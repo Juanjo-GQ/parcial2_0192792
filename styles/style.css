@@ -1,4 +1,3 @@
-/* Reseteo general */
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +7,7 @@
 
 body {
     background-color: #ffffff;
-    overflow: hidden; /* Evita barras de desplazamiento en escritorio */
+    overflow: hidden;
 }
 
 .container {
@@ -17,7 +16,6 @@ body {
     height: 100vh;
 }
 
-/* 1. Marca de agua gigante */
 .bg-watermark {
     position: absolute;
     top: 15%;
@@ -37,12 +35,13 @@ body {
     right: 0;
     width: 65%;
     height: 100%;
-    background-color: #1a1a1a; /* Usa este color sólido o reemplaza por una imagen con: background-image: url('img/fondo-ciudad.jpg'); background-size: cover; */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/caption.jpg');
+    background-size: cover; 
+    background-position: center; 
     clip-path: polygon(25% 0, 100% 0, 100% 100%, 5% 100%);
     z-index: 2;
 }
 
-/* 3. Capa derecha diagonal (Roja) */
 .bg-red {
     position: absolute;
     top: 0;
@@ -54,7 +53,6 @@ body {
     z-index: 3;
 }
 
-/* 4. Panel de Contenido */
 .content {
     position: absolute;
     top: 10%;
@@ -71,7 +69,7 @@ body {
     color: #e23636;
     font-size: 45px;
     font-weight: 900;
-    margin-bottom: auto; /* Empuja el texto hacia el centro-abajo */
+    margin-bottom: auto;
     letter-spacing: -2px;
 }
 
@@ -113,17 +111,15 @@ body {
     cursor: pointer;
 }
 
-/* 5. Imagen Principal */
 .hero-image {
     position: absolute;
     bottom: -5%;
     right: 0%;
     height: 100%;
-    z-index: 4; /* Sobre las capas de fondo, bajo el texto */
+    z-index: 4; 
     filter: drop-shadow(-15px 15px 25px rgba(0,0,0,0.6));
 }
 
-/* 6. Indicadores Laterales */
 .indicators {
     position: absolute;
     right: 2%;
@@ -143,75 +139,4 @@ body {
 
 .line.active {
     background-color: #ffffff;
-}
-
-/* =========================================
-   DISEÑO RESPONSIVO (MÓVILES)
-   ========================================= */
-@media (max-width: 768px) {
-    body {
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-
-    .container {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .bg-watermark {
-        font-size: 40vw;
-        top: 5%;
-        left: 0;
-    }
-
-    /* Redefinición de los cortes diagonales para adaptarlos verticalmente */
-    .bg-city {
-        width: 100%;
-        height: 55%;
-        top: auto;
-        bottom: 0;
-        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
-    }
-
-    .bg-red {
-        width: 100%;
-        height: 25%;
-        top: auto;
-        bottom: 0;
-        clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
-    }
-
-    .content {
-        width: 90%;
-        left: 5%;
-        top: 5%;
-        height: auto;
-    }
-
-    .logo {
-        margin-bottom: 30px;
-    }
-
-    .title {
-        font-size: 40px;
-    }
-
-    .desc {
-        font-size: 14px;
-        margin-bottom: 20px;
-    }
-
-    .hero-image {
-        right: 50%;
-        transform: translateX(50%);
-        bottom: 5%;
-        height: 65%;
-    }
-
-    /* Ocultar indicadores en pantallas pequeñas */
-    .indicators {
-        display: none;
-    }
 }
