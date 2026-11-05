@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;800&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 body {
@@ -54,8 +56,8 @@ body {
 
 .content {
     position: absolute;
-    top: 12%;
-    left: 5%;
+    top: 4%;
+    left: 3%;
     width: 38%;
     height: 75%;
     z-index: 5;
@@ -66,10 +68,10 @@ body {
 
 .logo {
     color: #e23636;
-    font-size: 45px;
+    font-size: 100px;
     font-weight: 900;
     margin-bottom: auto;
-    letter-spacing: -2px;
+    letter-spacing: -3px;
 }
 
 .breadcrumb {
@@ -88,7 +90,7 @@ body {
     font-size: 55px;
     font-weight: 900;
     margin-bottom: 15px;
-    letter-spacing: 1px;
+    letter-spacing: -1px;
 }
 
 .desc {
@@ -126,9 +128,9 @@ body {
 
 .hero-image {
     position: absolute;
-    bottom: 0%;
-    right: -8%;
-    height: 92%; 
+    bottom: -9%;
+    right: -9%;
+    height: 120%; 
     z-index: 4; 
     filter: drop-shadow(-15px 15px 25px rgba(0,0,0,0.7));
     pointer-events: none;
@@ -194,15 +196,16 @@ body {
     }
 
     .content {
-        position: relative;
-        top: 0;
+        position: absolute;
+        top: 35px;
         left: 0;
-        width: 90%;
-        margin: 25px auto 0 auto;
+        right: 0;
+        width: 100%;
+        padding: 0 25px;
+        box-sizing: border-box;
         height: auto;
-        padding: 0;
-        z-index: 5;
         display: block;
+        z-index: 5;
     }
 
     .logo {
